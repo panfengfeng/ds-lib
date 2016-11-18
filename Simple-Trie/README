@@ -1,0 +1,13 @@
+This part explains the Trie data structure and provides a simple sample implementation in C++
+
+1. Tries are used to index and search in a text;
+
+2. some examples of tries usage include finding the longest prefix, match in a routing table, auto complete of web addresses in browser etc;
+
+3. Trie is a tree where each vertex represents a word or prefix;
+
+4. The root represents an empty string;
+
+5. Markers are used to indicate end of words;
+
+6. A typical node in a trie includes the content (a char), marker for end of word and a collection of children.
