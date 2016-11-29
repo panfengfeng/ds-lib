@@ -1,13 +1,25 @@
 This part explains the Trie data structure and provides a simple sample implementation in C++
 
 1. Tries are used to index and search in a text;
-
 2. some examples of tries usage include finding the longest prefix, match in a routing table, auto complete of web addresses in browser etc;
-
 3. Trie is a tree where each vertex represents a word or prefix;
-
 4. The root represents an empty string;
-
 5. Markers are used to indicate end of words;
-
 6. A typical node in a trie includes the content (a char), marker for end of word and a collection of children.
+
+Trie, 又称字典树，单词查找树，是一种树形结构，用于保存大量字符串，优点是：利用字符串的公共前缀来节约存储空间
+其基本性质可以归纳为：
+    1. 根节点不包含字符，除根节点外每一个节点都只包含一个字符；
+    2. 从根节点到某一个节点，路径上经过的字符连接起来，为该节点对应的字符串；
+    3. 每个节点的所有子节点包含的字符都不相同；
+
+基本操作：查找、插入和删除
+
+搜索字典项目的方法为：
+    1. 从根节点开始一次搜索；
+    2. 取得要查找的关键词的第一个字母，并根据该字母选择对应的子树并转到该子树继续进行检索；
+    3. 在相应的子树上，取得要查找关键词的第二个字母，并进一步选择对应的子树进行检索;
+    4. 迭代上述过程;
+    5. 在某个结点处，关键词的所有字母已被取出，则读取附在该节点上的信息，即完成查找；
+
+
