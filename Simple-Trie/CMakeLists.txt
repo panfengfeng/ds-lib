@@ -16,7 +16,8 @@ target_link_libraries(simple_trie)
 # tools(cmd) source code
 set(TOOLS
         tools/build.cpp
-        tools/lookup.cpp)
+        tools/lookup.cpp
+        tools/traverse.cpp)
 
 set(EXES ${TOOLS})
 

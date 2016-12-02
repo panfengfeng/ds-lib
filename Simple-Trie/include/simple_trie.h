@@ -10,7 +10,6 @@
 
 namespace simple_trie {
     
-    using namespace std;
     typedef char Label;
     const Label LEAF = '\0';
 
@@ -20,11 +19,19 @@ namespace simple_trie {
                 nodes.push_back(Node());
                 labels.push_back(LEAF);   
             }
+
             ~Trie() {
             }
 
             size_t size() const {return nodes.size();}
             size_t nodeSize() const {return sizeof(Node) + sizeof(Label);}
+            void printLabels() {
+                cout << "labels size " << labels.size() << endl;
+                for (int i = 0; i < labels.size(); i++) {
+                    cout << labels[i] << endl;
+                }
+            }
+
             void addNode(Label label, Index next, Index child) { 
                 nodes.push_back(Node(next, child));
                 labels.push_back(label);
@@ -45,7 +52,7 @@ namespace simple_trie {
             }
 
             Index lookup(string::const_iterator begin, string::const_iterator end, Index current);
-
+            void traverse(Index current, string str);
             void save(const string &filename);
             void load(const string &filename);
             void read(const string &filename);
